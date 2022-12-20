@@ -569,6 +569,11 @@ func downloadVideoFromURL(url string, VideoName string, FileName string, Format 
 
 func StartVideoDL(dlURL string, originURL string, alternateVideoExists bool) string {
 	log.Println(dlURL)
+	ogURL := dlURL
+	// https://q5.s2dstore.to/a/extra/m2/2022/Violent.Night.2022.mp4?tok=55445159795359782533445434416D613370435638703742723937526E576B466369766E382D78663966696B4D6E7041415979533435786A73746A6D4B423953724B30544B312D51472D6D48374874694C4636524A695A6E4A4F3825334466466C69393631664E6C616C71787654374637433752375133655744507A656C3743775049336C6A636A743954687065736D3451494A646D614A71522533446535532D43316771446A5362436E553474795149757556354B424177493254493638654D685770716F31444D563942724244&valid=_F3U6fLQL1nSYrPwrrXbOg&t=1671583744
+	if strings.Contains(dlURL, "/extra/") {
+		dlURL = strings.ReplaceAll(dlURL, "/extra/", "/")
+	}
 	dlURLSec := strings.Split(dlURL, "/")
 	isDlAMovie := strings.HasPrefix(dlURLSec[4], "m")
 	dlFNPrefix := "m"
@@ -617,7 +622,7 @@ func StartVideoDL(dlURL string, originURL string, alternateVideoExists bool) str
 		dlTitleName += " " + strings.ReplaceAll(dlModFn, ".partial", "")
 	}
 	log.Println(isDlAMovie, dlURLSec[4], dlTitleName, dlFileName)
-	go downloadVideoFromURL(dlURL, dlTitleName, dlFileName, dlFormat, originURL)
+	go downloadVideoFromURL(ogURL, dlTitleName, dlFileName, dlFormat, originURL)
 	return "USECACHESERVER/CachedVideo::" + strings.ReplaceAll(dlFileName, ".partial", "."+dlFormat)
 }
 
