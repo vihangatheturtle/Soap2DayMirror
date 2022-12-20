@@ -568,6 +568,7 @@ func downloadVideoFromURL(url string, VideoName string, FileName string, Format 
 }
 
 func StartVideoDL(dlURL string, originURL string, alternateVideoExists bool) string {
+	log.Println(dlURL)
 	dlURLSec := strings.Split(dlURL, "/")
 	isDlAMovie := strings.HasPrefix(dlURLSec[4], "m")
 	dlFNPrefix := "m"
