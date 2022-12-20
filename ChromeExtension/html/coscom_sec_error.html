@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CosCom Security Error</title>
+		<script src="../js/crypto-js.min.js"></script>
+		<script src="../js/coscomsecerr.js"></script>
+		
+		<style>
+			html {
+				font-family: arial;
+				color: white;
+				overflow: hidden;
+			}
+			
+			body {
+				background-color: #1e0000;
+				opacity: 0.75;
+				overflow: hidden;
+			}
+			
+			#cdiv {
+				background-color: #852121;
+				width: 600px;
+				border-radius: 10px;
+				padding: 10px;
+				margin-left: 10px;
+				font-size: 12px;
+				word-wrap: break-word;
+				color: gainsboro;
+				position: absolute;
+				left: 0;
+				right: 0;
+				margin: auto;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h2 style="width:100%;text-align:center;position:absolute;top:140px;right:0;left:0;">Code Verification Failed</h2>
+		<p style="width:100%;text-align:center;margin-top:200px">There was an issue verifying the identity of this program.<br>Please notify support of the error in console or shown below.<br><br><div id="cdiv"><code id="CodeHolder"></code></div></p>
+		<img src="../images/ChoAIO128.png" style="position:absolute;left:0;right:0;top:0;margin:auto;">
+	</body>
+</html>

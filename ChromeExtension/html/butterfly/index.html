@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html
+  
+<head> 
+<style>
+    body,
+    html {
+      overflow: hidden;
+      background-color: #1e0000;
+	  margin: 0;
+    }
+
+    h1 {
+      font-size: 54px;
+      margin-bottom: 15px;
+      letter-spacing: -2px;
+      color: #fff;
+      font-weight: 300;
+      font-family: Roboto, sans-serif
+    }
+
+    panelette>h3 {
+      color: #fff !important;
+      font-size: 1.5em !important;
+      line-height: 1.25 !important
+    }
+
+    header {
+      display: none !important
+    }
+
+    .progressbar {
+      position: absolute;
+      width: 100%;
+      height: 9px;
+      top: 0;
+      left: 0
+    }
+
+    .progress {
+      width: 0%;
+      height: 100%;
+      background-color: #1e0000
+    }
+
+    .progress {
+      transition: all .5s ease
+    }
+
+    .wrap-scrolldownhoney {
+      cursor: pointer;
+      right: 0;
+      position: absolute;
+      text-align: center;
+      bottom: -1%;
+      transform: translate(-50%, -50%);
+      color: #fff
+    }
+
+    .wrap-scrolldownhoney .scrolldownhoney {
+      border: 2px solid #fff;
+      border-radius: 20px;
+      height: 40px;
+      margin: 0 auto 8px;
+      text-align: center;
+      width: 25px
+    }
+
+    .wrap-scrolldownhoney .scrolldownhoney .scrolldownhoney-c1,
+    .wrap-scrolldownhoney .scrolldownhoney .scrolldownhoney-c2 {
+      animation-duration: 1.5s;
+      animation-name: scrolldownhoney;
+      animation-iteration-count: infinite;
+      fill: #fff
+    }
+
+    .wrap-scrolldownhoney .scrolldownhoney-c2 {
+      animation-delay: .75s
+    }
+
+    @-moz-keyframes scrolldownhoney {
+      0% {
+        opacity: 0;
+        transform: translate(0, -8px)
+      }
+
+      50% {
+        opacity: 1;
+        transform: translate(0, 0)
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(0, 8px)
+      }
+    }
+
+    @-webkit-keyframes scrolldownhoney {
+      0% {
+        opacity: 0;
+        transform: translate(0, -8px)
+      }
+
+      50% {
+        opacity: 1;
+        transform: translate(0, 0)
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(0, 8px)
+      }
+    }
+
+    @-o-keyframes scrolldownhoney {
+      0% {
+        opacity: 0;
+        transform: translate(0, -8px)
+      }
+
+      50% {
+        opacity: 1;
+        transform: translate(0, 0)
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(0, 8px)
+      }
+    }
+
+    @keyframes scrolldownhoney {
+      0% {
+        opacity: 0;
+        transform: translate(0, -8px)
+      }
+
+      50% {
+        opacity: 1;
+        transform: translate(0, 0)
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(0, 8px)
+      }
+    }
+
+    .media {
+      color: #fff
+    }
+
+    .media>img {
+      border-radius: 5px;
+      cursor: pointer
+    }
+
+    .media-body>h2 {
+      color: #954b7c;
+      margin-left: 10px;
+      cursor: pointer
+    }
+
+    hr {
+      border-top: 1px solid #2d3440
+    }
+
+    .spot {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0
+    }
+
+    .svg-wrapper {
+      margin-top: 0;
+      position: relative;
+      width: 150px;
+      height: 40px;
+      display: inline-block;
+      border-radius: 3px;
+      margin-left: 5px;
+      margin-right: 5px
+    }
+
+    #shape {
+      stroke-width: 6px;
+      fill: transparent;
+      stroke: #954b7c;
+      stroke-dasharray: 85 400;
+      stroke-dashoffset: -220;
+      transition: 1s all ease
+    }
+
+    #text {
+      margin-top: -35px;
+      text-align: center;
+      line-height: 30px;
+      font-size: 15px;
+      color: #fff
+    }
+
+    #text a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 100;
+      font-size: 1.1em
+    }
+
+    .svg-wrapper:hover #shape {
+      stroke-dasharray: 50 0;
+      stroke-width: 3px;
+      stroke-dashoffset: 0;
+      stroke: #954b7c
+    }
+
+    .card {
+      cursor: pointer;
+      color: #fff;
+      background-color: #14171c
+    }
+
+    .section-first div.row {
+      text-align: center;
+      align-items: center;
+      height: 32vh
+    }
+
+    .cc-window {
+      display: none
+    }
+
+    .redirect--mobile {
+      display: none
+    }
+
+    @media only screen and (max-width:1250px) {
+      .ads--desktop {
+        visibility: hidden
+      }
+
+      .wrap-scrolldownhoney {
+        visibility: hidden
+      }
+
+      .row--centered {
+        margin-left: 0 !important;
+        margin-right: 0 !important
+      }
+
+      html {
+        overflow-y: hidden !important
+      }
+    }
+
+    @media only screen and (max-width:1000px) {
+      .redirect {
+        display: none !important
+      }
+
+      .redirect--mobile.captcha {
+        display: block
+      }
+
+      .section--last {
+        display: none !important
+      }
+
+      .redirect {
+        display: none !important
+      }
+    }
+
+    #countdown {
+      position: relative;
+      margin: auto;
+      margin-top: 20px;
+      margin-bottom: 0;
+      height: 150px;
+      width: 150px;
+      text-align: center
+    }
+
+    #countdown-number {
+      color: #fff;
+      display: inline-block;
+      line-height: 150px
+    }
+
+    .redirect--mobile svg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      transform: rotateY(-180deg) rotateZ(-90deg)
+    }
+
+    .redirect--mobile svg circle:nth-child(1) {
+      stroke-dasharray: 423.75px;
+      stroke-dashoffset: 0;
+      stroke-linecap: round;
+      stroke-width: 4px;
+      stroke: #fff;
+      fill: none
+    }
+
+    .redirect--mobile svg circle:nth-child(2) {
+      stroke-dasharray: 423.75px;
+      stroke-dashoffset: 0;
+      stroke-linecap: round;
+      stroke-width: 4px;
+      stroke: #954b7c;
+      fill: none
+    }
+
+    .redirect--mobile span {
+      font-size: 3.5rem
+    }
+</style>
+</head>
+<body>
+<div class="progressbar">
+	<div class="progress"></div>
+</div>
+
+<div id="fullpage">
+	<div class="section section-first">
+		<div class="container-fluid" style="min-height: 100vh;">
+			<div class="row justify-content-center align-self-center" style="align-items: flex-end !important;">
+				<div class="col-md-12">
+				</div>
+			</div>
+			<div class="row justify-content-center align-self-center">
+				<div class="col-md-12" style="text-align: center; background-color: rgba(0, 0, 0, .3);">
+					<h1 class="redirect timer" style="padding: 70px;display: none;">
+						Your secured link will be ready in ... seconds
+					</h1>
+            <h1 class="redirect--mobile timer--mobile" style="display: none;">
+              <div id="countdown">
+                <div id="countdown-number">
+                  ...
+                </div>
+                <svg>
+                  <circle r="67.5" cx="75" cy="75"></circle>
+                  <circle r="67.5" cx="75" cy="75"></circle>
+                </svg>
+              </div>
+              <span>Please wait before redirecting</span>
+            </h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="themes/cshort_theme/assets/js/jquery.fullpage.min.js"></script><script src="themes/cshort_theme/assets/js/three.r92.min.js"></script>
+<script src="themes/cshort_theme/assets/js/vanta.birds.min.js"></script>
+<script src="../../js/birds.js"></script>
+	</body>
+
+
+</html>

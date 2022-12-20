@@ -1,0 +1,31 @@
+html,
+body {
+    min-width: 320px;
+    min-height: 475px;
+    width: 320px;
+    height: 475px;
+    background: #202020;
+}
+
+#header {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+#instruct {
+	position: absolute;
+	bottom: 180px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 230px;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	opacity: 0;
+	transition: .4s;
+}

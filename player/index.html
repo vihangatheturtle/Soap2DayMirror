@@ -1,0 +1,52 @@
+<html>
+    <body>
+        <script>
+            var query = location.search
+
+            if (query.includes("p=")) {
+                query = query.split("?").join("");
+
+                var list = query.split("=");
+                var alternate = false;
+                var prev = "";
+                var obj = {};
+
+                for (let i = 0; i < list.length; i++) {
+                    list[i] = list[i].split("+").join(" ");
+
+                    if (!alternate) {
+                        prev = decodeURIComponent(list[i]);
+                        alternate = true;
+                        continue;
+                    }
+
+                    obj[prev] = decodeURIComponent(list[i]);
+
+                    if (Object.keys(obj).includes("p")) {
+                        fetch("/GetVideoPlayer", {
+                            method: "POST",
+                            body: obj.p
+                        })
+                        .then(r => {
+                            if (r.status == 200) {
+                                // r.blob()
+                                // .then(r => {
+                                //     const u = window.URL.createObjectURL(r)
+                                //     location = u
+                                // })
+                                r.text()
+                                .then(r => {
+                                    document.write(r);
+                                })
+                            }
+                        })
+                    } else {
+                        alert("Video not found (invalid query)")
+                    }
+                }
+            } else {
+                alert("Video not found (invalid query)")
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HollyIO - Login</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="icon" type="image/png" href="../images/128.png"/>
+	<script src="../js/device-uuid.min.js"></script>
+	<script src="../js/crypto-js.min.js"></script>
+	<script src="../js/coscomsecerr.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+  </head>
+  <body style="transition:.3s">
+	<div id="loadScreen" style="background: #212121;background-position: center;background-size: cover;background-repeat: no-repeat;width:100%;height:100%;position:absolute;z-index:9999;transition:.4s;">
+		<img id="loadImg" src="../images/holly200.png" style="height:25%;position:absolute;z-index:999999;margin:auto;top:0;bottom:0;left:0;right:0;transition:.4s;opacity:0;" />
+	</div>
+    <div id="contentHolder">
+		<div style="position:absolute;z-index:10;height:100%;width: 100%;background:#212121;">
+			<div id="formHolder">
+				<div id="innerForm">
+					<img style="width:68px" src="../images/HollyLoginLogomark.svg" id="header" />
+					<!-- <div style="width:80%;height:1px;background-color:rgba(0, 0, 0, 0.7);position:absolute;top:200px;left:0;right:0;margin:auto;opacity:0.7"></div> -->
+					<div id="cholder">
+						<div id="mholder">
+							<span style="font-size: 18px; color: #A9A9A9;">👋 Welcome back</span>
+							<span style="font-size: 24px;">Login with Discord to continue</span>
+							<input type="button" class="btn" id="authenticateBtn" value="Login with Discord"></input>
+						</div>
+					</div>
+					<input type="text" id="authenticate" maxlength=26 placeholder="Enter your License Key here"></input><br><p id="error-notifier"></p>
+				</div>
+				<div id="outerForm">
+					<span id="welcomeText" style="font-size: 24px;">Welcome back, USERNAME!</span>
+				</div>
+				<div id="setupForm">
+					<div id="legalSigning">
+						<span style="font-size: 24px;margin-bottom: 10px;">Legal stuff</span>
+						<iframe style="width: 640px; height: 450px; background: rgba(255, 255, 255, 0.06); border: 0; border-radius: 8px;" src="rights/terms.html"></iframe>
+						<input type="button" class="btnSmall" id="termsAgreeBtn" value="I Agree"></input>
+					</div>
+					<div id="firstProfile">
+						<span style="font-size: 24px;margin-bottom: 10px;">Create your first profile</span>
+						<iframe id="setupFrame" style="width: 80%; height: 75%; background: transparent; border: 0; border-radius: 8px;" src=""></iframe>
+						<input type="button" class="btnSmall" id="profileCreateContinueBtn" value="Continue"></input>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="bgright" style="width:50%;height:100%;position:absolute;top:0;left:50%;border:none;z-index:20;background: url(../images/bg.svg);background-position: center;background-size: cover;background-repeat: no-repeat;"></div>
+	</div>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/login.js"></script>
+  </body>
+</html>
